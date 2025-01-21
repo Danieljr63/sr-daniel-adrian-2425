@@ -10,6 +10,9 @@ ejemplo.com.      IN      SOA     PC11    admin (
 ; Servidores de nombre
 @       IN      NS      PC11.ejemplo.com.
         IN      NS      PC12.ejemplo.com.
+; Servidores de correo
+	IN	MX	10	smtp.ejemplo.com.
+	IN	MX	20	smtp2.ejemplo.com.
 
 ; Estaciones de trabajo de la red 172.17.39.0/24
 $INCLUDE /var/lib/bind/db.ejemplorrhh.com
@@ -31,3 +34,10 @@ dns2	IN	CNAME	PC12
 PC14.ejemplo.com	IN	A	172.17.38.1
 www	IN	CNAME	PC14
 ftp	IN	CNAME	PC14
+
+PC15	IN	A	172.17.38.2
+smtp	IN	CNAME	PC15
+pop	IN	CNAME	PC15
+
+PC16	IN	A	172.17.38.3
+smtp2	IN	CNAME	PC16
