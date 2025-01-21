@@ -19,10 +19,15 @@ $INCLUDE /var/lib/bind/db.ejemploadmin.com
 PC10    IN      A       172.17.39.10
 	IN	A	172.17.38.10
 
+router	IN	CNAME	PC10
+
 ; Servidores DNS
-PC11    IN      A       192.168.39.11
-PC12    IN      A       192.168.39.12
+PC11    IN      A       172.17.39.11
+dns1	IN	CNAME	PC11
+PC12    IN      A       172.17.39.12
+dns2	IN	CNAME	PC12
 
 ; Servidores de la red  172.17.38.0/24
-PC14.ejemplo.com.	IN	A	172.17.38.1
-PC15	IN	A	172.17.38.1	
+PC14.ejemplo.com	IN	A	172.17.38.1
+www	IN	CNAME	PC14
+ftp	IN	CNAME	PC14
